@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">LEADERBOARD</string>
+    <string name="image">GADS Learner Badge</string>
+    <string name="name">Martini</string>
+    <string name="btn">Submit</string>
+    <string name="first"> First Name</string>
+    <string name="last"> Last Name</string>
+    <string name="email"> Email</string>
+    <string name="github"> Project on GITHUB (link)</string>
+    <string name="Submit_btn"> Submit</string>
+    <string name="Submission"> Project Submission</string>
+</resources>
