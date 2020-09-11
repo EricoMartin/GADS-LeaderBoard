@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
         <activity android:name=".SuccessActivity"></activity>
         <activity android:name=".FormActivity"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
         <activity android:name=".LearnerActivity" />
         <activity android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

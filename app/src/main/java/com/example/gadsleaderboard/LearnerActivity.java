@@ -33,7 +33,7 @@ public class LearnerActivity extends AppCompatActivity  implements ItemFragment.
         tabLayout = findViewById(R.id.tab_layout);
 
 
-        tabLayout.addTab(tabLayout.newTab().setText("LEARNING LEADERS"));
+        tabLayout.addTab(tabLayout.newTab().setText("Learning Leaders"));
         tabLayout.addTab(tabLayout.newTab().setText("Skill IQ Leaders"));
         updatePage();
 
@@ -70,6 +70,7 @@ public class LearnerActivity extends AppCompatActivity  implements ItemFragment.
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu, menu);
         MenuItem item = menu.findItem(R.id.button1);
+
 //        MenuItemCompat.getActionProvider(item).setVisibilityListener(new View.setVisibilityListener() {
 //            @Override
 //            public void onClick(View v) {
@@ -96,8 +97,6 @@ public class LearnerActivity extends AppCompatActivity  implements ItemFragment.
 
     private void nextActivity() {
         Intent intent = new Intent(this, FormActivity.class);
-        intent.putExtra("First Name", "Eric");
-        intent.putExtra("Last Name", "Martin");
         startActivity(intent);
     }
 

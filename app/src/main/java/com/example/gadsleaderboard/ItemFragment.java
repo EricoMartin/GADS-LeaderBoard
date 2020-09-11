@@ -8,7 +8,6 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.viewpager.widget.ViewPager;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -16,7 +15,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.gadsleaderboard.dummy.DummyContent.DummyItem;
-import com.google.android.material.tabs.TabLayout;
 
 import java.util.List;
 
@@ -34,9 +32,6 @@ public class ItemFragment extends Fragment {
     private List<LearnerResponse> learnerResponseList;
     RecyclerView list;
     MyItemRecyclerViewAdapter learnersAdapter;
-    PagerAdapter pagerAdapter;
-    ViewPager viewPager;
-    TabLayout tabLayout;
 
     // TODO: Customize parameter argument names
     private static final String ARG_COLUMN_COUNT = "column-count";
@@ -68,8 +63,6 @@ public class ItemFragment extends Fragment {
             mColumnCount = getArguments().getInt(ARG_COLUMN_COUNT);
         }
 
-//        learnersAdapter = new MyItemRecyclerViewAdapter();
-//        getAllLearners();
     }
 
     @Override
@@ -88,17 +81,11 @@ public class ItemFragment extends Fragment {
             learnersAdapter = new MyItemRecyclerViewAdapter();
             getAllLearners();
         }
-//        learnersAdapter = new MyItemRecyclerViewAdapter(learnerResponseList, mListener);
 
         return view;
     }
 
      public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-//        pagerAdapter = new PagerAdapter(getChildFragmentManager());
-//        viewPager = view.findViewById(R.id.pager);
-//        //viewPager.setAdapter(pagerAdapter);
-//        tabLayout = view.findViewById(R.id.tab_layout);
-//        //tabLayout.setupWithViewPager(viewPager);
 
     }
 

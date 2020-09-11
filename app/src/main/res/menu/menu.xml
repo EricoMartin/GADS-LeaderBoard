@@ -8,9 +8,10 @@
 
     <item
         android:id="@+id/button1"
-        android:actionLayout="@layout/menu_layout"
+        android:backgroundTint="#E3E0E0"
         android:clickable="true"
         android:padding="20dp"
+        android:textColor="@color/colorPrimary"
         android:title="@string/Submit_btn"
         app:showAsAction="always">
 

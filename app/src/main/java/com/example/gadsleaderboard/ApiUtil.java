@@ -2,6 +2,7 @@ package com.example.gadsleaderboard;
 
 import okhttp3.OkHttpClient;
 import okhttp3.logging.HttpLoggingInterceptor;
+import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -9,8 +10,8 @@ public class ApiUtil {
     private ApiUtil(){}
 
     public static final String BASE_API_URL = " https://gadsapi.herokuapp.com/";
-//    public static final String TOP_LEARNERS_API_URL = " https://gadsapi.herokuapp.com/api/hours";
-//    public static final String SKILL_IQ_API_URL = " https://gadsapi.herokuapp.com/api/skilliq";
+    public static final String GOOGLE_API_URL = "https://docs.google.com/forms/d/e/";
+
 
 
 
@@ -26,14 +27,29 @@ public class ApiUtil {
                 .build();
         return  retrofit;
     }
+    private static Retrofit postRetrofit(){
+
+        HttpLoggingInterceptor httpLoggingInterceptor = new HttpLoggingInterceptor().setLevel(HttpLoggingInterceptor.Level.BODY);
+        OkHttpClient okHttpClient = new OkHttpClient.Builder()
+                .addInterceptor(httpLoggingInterceptor).build();
+
+        Retrofit retrofit = new Retrofit.Builder().baseUrl(GOOGLE_API_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .client(okHttpClient)
+                .build();
+        return  retrofit;
+    }
 
     public static LearnerService getLearnerService(){
         LearnerService learnerService = getRetrofit().create(LearnerService.class);
         return learnerService;
     }
 
-    public static SkillService getSkillService(){
-        SkillService skillService = getRetrofit().create(SkillService.class);
-        return skillService;
+    public static LearnerService postService(){
+        LearnerService submitService = postRetrofit().create(LearnerService.class);
+        return submitService;
+    }
+    public static Call<Void> submitProject(String fName, String lName, String email, String link) {
+        return postService().submitForm(fName, lName, email, link);
     }
 }

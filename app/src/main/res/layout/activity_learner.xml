@@ -7,8 +7,8 @@
     android:theme="@style/Widget.MaterialComponents.TabLayout"
     android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#000000"
     android:orientation="vertical"
+    android:background="@color/colorPrimary"
     android:padding="10dp"
     tools:context=".LearnerActivity">
 
@@ -17,28 +17,11 @@
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#000000"
         android:theme="@style/Widget.MaterialComponents.TabLayout.Colored"
         app:tabGravity="fill"
-        app:tabIndicator="@color/whiteColor"
-        app:tabIndicatorColor="#F1EAEA"
-        app:tabMode="fixed"
+        app:tabIndicatorColor="@color/whiteColor"
         app:tabTextColor="@color/whiteColor">
 
-        <!--            <com.google.android.material.tabs.TabItem-->
-        <!--                android:id="@+id/tab_1"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:text="@string/tab_1">-->
-
-        <!--            </com.google.android.material.tabs.TabItem>-->
-
-
-        <!--            <com.google.android.material.tabs.TabItem-->
-        <!--                android:id="@+id/tab_2"-->
-        <!--                android:layout_width="wrap_content"-->
-        <!--                android:layout_height="wrap_content"-->
-        <!--                android:text="@string/tab_2" />-->
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager
