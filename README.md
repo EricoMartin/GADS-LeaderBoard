@@ -7,7 +7,7 @@ A simple Android App that Fetches Data from GADS LeaderBoard API
 ## Second Screen (Learning Leaders Fragment)
 <img src="https://github.com/EricoMartin/GADS-LeaderBoard/blob/master/app/src/main/res/drawable/screen2.png" alt="screen two" width="250"/>
 
-## Third Screen (Skill IQ Fragmment)
+## Third Screen (Skill IQ Fragment)
 <img src="https://github.com/EricoMartin/GADS-LeaderBoard/blob/master/app/src/main/res/drawable/screen3.png" alt="screen three" width="250"/>
 
 
