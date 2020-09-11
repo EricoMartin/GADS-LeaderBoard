@@ -2,13 +2,14 @@
 A simple Android App that Fetches Data from GADS LeaderBoard API
 
 ## First Screen
-![alt text](https://github.com/EricoMartin/GADS-LeaderBoard/blob/master/app/src/main/res/drawable/screen.png)
+<img src="https://github.com/EricoMartin/GADS-LeaderBoard/blob/master/app/src/main/res/drawable/screen.png" alt="screen one" width="250"/>
 
 ## Second Screen (Learning Leaders Fragment)
-![alt text](https://github.com/EricoMartin/GADS-LeaderBoard/blob/master/app/src/main/res/drawable/screen2.png)
+<img src="https://github.com/EricoMartin/GADS-LeaderBoard/blob/master/app/src/main/res/drawable/screen2.png" alt="screen two" width="250"/>
 
 ## Third Screen (Skill IQ Fragmment)
-![alt text](https://github.com/EricoMartin/GADS-LeaderBoard/blob/master/app/src/main/res/drawable/screen3.png)
+<img src="https://github.com/EricoMartin/GADS-LeaderBoard/blob/master/app/src/main/res/drawable/screen3.png" alt="screen three" width="250"/>
+
 
 ## Fourth Screen (Submit Activity)
-![alt text](https://github.com/EricoMartin/GADS-LeaderBoard/blob/master/app/src/main/res/drawable/screen4.png)
+<img src="https://github.com/EricoMartin/GADS-LeaderBoard/blob/master/app/src/main/res/drawable/screen4.png" alt="screen four" width="250"/>
