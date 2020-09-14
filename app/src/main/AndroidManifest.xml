@@ -14,7 +14,8 @@
         <activity android:name=".SuccessActivity"></activity>
         <activity android:name=".FormActivity"
             android:theme="@style/Theme.MaterialComponents.NoActionBar"/>
-        <activity android:name=".LearnerActivity" />
+        <activity android:name=".LearnerActivity"
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
 

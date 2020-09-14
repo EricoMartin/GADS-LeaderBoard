@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import androidx.appcompat.widget.Toolbar;
+
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -42,27 +45,28 @@ public class FormActivity extends AppCompatActivity {
         String email = email_address.getText().toString().trim();
         String link = github_link.getText().toString().trim();
 
-        if (validateInputs(firstName, first_name) && validateInputs(lastName, last_name)
-                && validateInputs(email, email_address) && validateInputs(link, github_link)) {
+//        if (validateInputs(firstName, first_name) && validateInputs(lastName, last_name)
+//                && validateInputs(email, email_address) && validateInputs(link, github_link)) {
 
-            new AlertDialog.Builder(FormActivity.this)
+            Objects.requireNonNull(new AlertDialog.Builder(FormActivity.this)
+                    .setView(getLayoutInflater().inflate(R.layout.confirm_alert_dialog, null))
                     .setTitle("Are you Sure ?")
-                    .setPositiveButton("Yes", (dialog, which) -> submitDetails(firstName, lastName, email, link))
+                    .setPositiveButton("Yes", (dialog, which) -> submitDetails(firstName, lastName, email, link)))
                     .create()
                     .show();
-        }
+
     }
 
-    private boolean validateInputs(String value, EditText view) {
-        if (value.isEmpty()) {
-            view.setError("Field must not be empty");
-            view.requestFocus();
-            return false;
-        } else {
-            view.setError(null);
-            return true;
-        }
-    }
+//    private boolean validateInputs(String value, EditText view) {
+//        if (value.isEmpty()) {
+//            view.setError("Field must not be empty");
+//            view.requestFocus();
+//            return false;
+//        } else {
+//            view.setError(null);
+//            return true;
+//        }
+//    }
 
 
     public void submitDetails(String firstName, String lastName, String email, String link) {
@@ -72,6 +76,7 @@ public class FormActivity extends AppCompatActivity {
                                     public void onResponse(Call<Void> call, Response<Void> response) {
                                         if (!response.isSuccessful()) {
                                             new AlertDialog.Builder(FormActivity.this)
+                                                    .setView(getLayoutInflater().inflate(R.layout.error_alert_dialog,null))
                                                     .setTitle("Failed to Submit Project")
                                                     .setMessage(response.message() + "\n" + response.code())
                                                     .create()
@@ -80,6 +85,7 @@ public class FormActivity extends AppCompatActivity {
                                         }
 
                                         new AlertDialog.Builder(FormActivity.this)
+                                                .setView(getLayoutInflater().inflate(R.layout.success_alert_dialog,null))
                                                 .setTitle("Success ")
                                                 .setMessage("Project Submitted Successfully")
                                                 .create()
@@ -90,6 +96,7 @@ public class FormActivity extends AppCompatActivity {
                                     @Override
                                     public void onFailure(Call<Void> call, Throwable t) {
                                         new AlertDialog.Builder(FormActivity.this)
+                                                .setView(getLayoutInflater().inflate(R.layout.error_alert_dialog,null))
                                                 .setTitle("Failed to Submit Project")
                                                 .setMessage(t.getMessage())
                                                 .create()

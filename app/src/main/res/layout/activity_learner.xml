@@ -12,7 +12,56 @@
     android:padding="10dp"
     tools:context=".LearnerActivity">
 
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary">
+            <LinearLayout
+                android:paddingTop="10dp"
+                android:gravity="center_vertical"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary">
+                <TextView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="LEADERBOARD"
+                    android:textStyle="bold"
+                    android:background="@color/colorPrimary"
+                    android:textSize="18sp"
+                    android:textColor="@color/whiteColor"/>
+            </LinearLayout>
+            <LinearLayout
+                android:paddingTop="5dp"
+                android:gravity="end"
+                android:layout_gravity="center_vertical"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary">
 
+                <Button
+                    android:layout_gravity="center_vertical"
+                    android:id="@+id/button1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    app:cornerRadius="17.5dp"
+                    android:clickable="true"
+                    android:onClick="onCreateOptionsMenu"
+                    android:backgroundTint="@color/whiteColor"
+                    android:padding="1dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textAllCaps="false"
+                    android:text="Submit" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.appcompat.widget.Toolbar>
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"

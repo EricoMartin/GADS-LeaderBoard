@@ -100,4 +100,10 @@ public class LearnerActivity extends AppCompatActivity  implements ItemFragment.
         startActivity(intent);
     }
 
+    public void onCreateOptionsMenu(View view) {
+        if (view.getId() == R.id.button1) {
+            nextActivity();
+            return;
+        }
+    }
 }

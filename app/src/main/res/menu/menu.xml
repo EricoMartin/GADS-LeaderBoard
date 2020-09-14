@@ -7,13 +7,19 @@
     android:padding="20dp">
 
     <item
-        android:id="@+id/button1"
-        android:backgroundTint="#E3E0E0"
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="35dp"
+        android:actionLayout="@layout/menu_layout"
+        android:alpha="0"
+        android:checkable="true"
         android:clickable="true"
+        android:enabled="true"
         android:padding="20dp"
-        android:textColor="@color/colorPrimary"
         android:title="@string/Submit_btn"
+        android:visible="true"
         app:showAsAction="always">
 
     </item>
+
 </menu>

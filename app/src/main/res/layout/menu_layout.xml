@@ -8,14 +8,15 @@
     android:background="#FFFFFF">
 
 
-    <TextView
+    <Button
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:background="#FFFFFF"
+        android:backgroundTint="#FFFFFF"
         android:clickable="false"
         android:text="@string/Submit_btn"
+        app:cornerRadius="20dp"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
