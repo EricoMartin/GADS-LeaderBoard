@@ -3,11 +3,8 @@ package com.example.gadsleaderboard;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import androidx.appcompat.widget.Toolbar;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -23,6 +20,7 @@ import retrofit2.Response;
 public class FormActivity extends AppCompatActivity {
     EditText first_name, last_name, email_address, github_link;
     Button button;
+    Toolbar toolbar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +33,7 @@ public class FormActivity extends AppCompatActivity {
         github_link = findViewById(R.id.editText4);
 
         setSupportActionBar(findViewById(R.id.submission_toolbar));
+        Objects.requireNonNull(getSupportActionBar()).setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
     }
@@ -45,8 +44,8 @@ public class FormActivity extends AppCompatActivity {
         String email = email_address.getText().toString().trim();
         String link = github_link.getText().toString().trim();
 
-//        if (validateInputs(firstName, first_name) && validateInputs(lastName, last_name)
-//                && validateInputs(email, email_address) && validateInputs(link, github_link)) {
+        if (validateInputs(firstName, first_name) && validateInputs(lastName, last_name)
+                && validateInputs(email, email_address) && validateInputs(link, github_link)) {
 
             Objects.requireNonNull(new AlertDialog.Builder(FormActivity.this)
                     .setView(getLayoutInflater().inflate(R.layout.confirm_alert_dialog, null))
@@ -54,19 +53,19 @@ public class FormActivity extends AppCompatActivity {
                     .setPositiveButton("Yes", (dialog, which) -> submitDetails(firstName, lastName, email, link)))
                     .create()
                     .show();
-
+        }
     }
 
-//    private boolean validateInputs(String value, EditText view) {
-//        if (value.isEmpty()) {
-//            view.setError("Field must not be empty");
-//            view.requestFocus();
-//            return false;
-//        } else {
-//            view.setError(null);
-//            return true;
-//        }
-//    }
+    private boolean validateInputs(String value, EditText view) {
+        if (value.isEmpty()) {
+            view.setError("Field must not be empty");
+            view.requestFocus();
+            return false;
+        } else {
+            view.setError(null);
+            return true;
+        }
+    }
 
 
     public void submitDetails(String firstName, String lastName, String email, String link) {
